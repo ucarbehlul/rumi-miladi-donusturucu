@@ -1,4 +1,4 @@
-#!node
+#!/usr/bin/env node
 
 /**
  * 1 ocak 1800'den sonrasi icin calisir. Gregoryenden 
