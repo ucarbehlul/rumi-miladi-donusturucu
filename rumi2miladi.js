@@ -2,6 +2,8 @@
 
 var moment = require('moment');
 
+const verbose = process.argv.indexOf('--verbose') != -1;
+
 const input = process.argv[2];
 //miladide 29 cekmeyen 1900 yılına özel çözüm
 if (input == '1315-02-29') {
@@ -22,7 +24,7 @@ if (rumiTarih.isBefore(onUcGunOlmaTarihi)) {
   adjustedRumi.add(13, 'days');
 }
 
-console.debug("adjusted rumi", adjustedRumi.format());
+if(verbose) {console.debug("adjusted rumi", adjustedRumi.format());}
 
 const month = adjustedRumi.month()+1 // make it 1-indexed
 const year = miladiBasSene + (adjustedRumi.year()-1256) + (month < 3 ? 1 : 0)

@@ -7,6 +7,8 @@
  */
 var moment = require('moment');
 
+const verbose = process.argv.indexOf('--verbose') != -1;
+
 const miladiTarih = moment(process.argv[2]);
 const miladiBasSene = 1840;
 const ayniGunOlmaTarihi = moment('1917-03-01');
@@ -19,7 +21,8 @@ if (miladiTarih.isBefore(onUcGunOlmaTarihi)) {
 } else if (miladiTarih.isBefore(ayniGunOlmaTarihi)) {
   adjustedMiladi.subtract(13, 'days');
 }
-console.debug("adjusted miladi", adjustedMiladi.format());
+if (verbose) {console.debug("adjusted miladi", adjustedMiladi.format());}
+
 //tam on uc gun oldugu tarihte rumi takvim 29 subat oldu, onu ekle
 let day = adjustedMiladi.date();
 if (miladiTarih.isSame(onUcGunOlmaTarihi)) day++;
