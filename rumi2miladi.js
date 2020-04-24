@@ -14,7 +14,7 @@ if (input == '1315-02-29') {
 let rumiTarih = moment(input);
 const miladiBasSene = 1840;
 const ayniGunOlmaTarihi = moment('1333-03-01');
-const onUcGunOlmaTarihi = moment('1315-03-01');
+const onUcGunOlmaTarihi = moment('1316-01-01');
 
 //ayni gun olmalarindan onceyse 13 gun cikar
 const adjustedRumi = rumiTarih.clone();
@@ -26,8 +26,8 @@ if (rumiTarih.isBefore(onUcGunOlmaTarihi)) {
 
 if(verbose) {console.debug("adjusted rumi", adjustedRumi.format());}
 
-const month = rumiTarih.month()+1 // make it 1-indexed, burada orijinal tarihi kullanmak gerek
-const year = miladiBasSene + (adjustedRumi.year()-1256) + (month < 3 ? 1 : 0)
+const month = adjustedRumi.month()+1 // make it 1-indexed
+const year = miladiBasSene + (adjustedRumi.year()-1256) + (rumiTarih.month() < 3 ? 1 : 0) // burada orijinal ayı kullanmak gerek
 
 console.log(`${year}-${month.toString().padStart(2, '0')}-${adjustedRumi.date().toString().padStart(2, '0')}`);
 
