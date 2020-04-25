@@ -38,7 +38,7 @@ function rumi2Miladi(rumiTarihStr) {
 
 if (require.main === module) {
   const input = process.argv[2];
-  rumi2Miladi(input); 
+  console.log(rumi2Miladi(input)); 
 }
 
 module.exports = rumi2Miladi;
