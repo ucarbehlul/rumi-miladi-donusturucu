@@ -48,4 +48,30 @@ test('12 gun fark aralik sonu', () => {
   expect(rumi2Miladi('1302-12-25')).toBe('1887-01-06');
 });
 
+test('13 gun oldugu sene 1316 subatin son gunleri', () => {
+  expect(rumi2Miladi('1316-02-20')).toBe('1901-03-05');
+});
 
+test('13 gun oldugu sene 1316 subatin ilk gunleri', () => {
+  expect(rumi2Miladi('1316-02-02')).toBe('1901-02-15');
+});
+
+test('13 gun oldugu sene 1316 temmuz', () => {
+  expect(rumi2Miladi('1316-07-02')).toBe('1900-07-15');
+});
+
+test('13 gun oldugu sene oncesi 1315 subat', () => {
+  expect(rumi2Miladi('1315-02-05')).toBe('1900-02-17');
+});
+
+test('ayni gun oldugu sene 1333 mart 01', () => {
+  expect(rumi2Miladi('1333-03-01')).toBe('1917-03-01');
+});
+
+test('ayni gun oldugu sene oncesi 1332 mart 01', () => {
+  expect(rumi2Miladi('1332-03-01')).toBe('1916-03-14');
+});
+
+test('ayni gun oldugu sene oncesi 1332 subat 01', () => {
+  expect(rumi2Miladi('1332-02-01')).toBe('1917-02-14');
+});
