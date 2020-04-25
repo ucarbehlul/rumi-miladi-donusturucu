@@ -27,7 +27,7 @@ if (rumiTarih.isBefore(onUcGunOlmaTarihi)) {
 if(verbose) {console.debug("adjusted rumi", adjustedRumi.format());}
 
 const month = adjustedRumi.month()+1 // make it 1-indexed
-const year = miladiBasSene + (adjustedRumi.year()-1256) + (rumiTarih.month() < 3 ? 1 : 0) // burada orijinal ayı kullanmak gerek
+const year = miladiBasSene + (adjustedRumi.year()-1256) + ((rumiTarih.month()+1) < 3 ? 1 : 0) // burada orijinal ayı kullanmak gerek
 
 console.log(`${year}-${month.toString().padStart(2, '0')}-${adjustedRumi.date().toString().padStart(2, '0')}`);
 
