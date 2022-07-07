@@ -9,7 +9,7 @@
   "author": "ucarbehlul",
   "license": "ISC",
   "dependencies": {
-    "moment": "^2.24.0"
+    "moment": "^2.29.4"
   },
   "devDependencies": {
     "jest": "^25.4.0"
